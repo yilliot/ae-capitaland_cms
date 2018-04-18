@@ -1,0 +1,332 @@
+@font-face {
+  font-family: stencil;
+  src: url('/fonts/Geogrotesque Stencil C-Medium.otf');
+}
+body{font-family: 'stencil'; overflow: hidden;}
+
+.heading-font{
+  font-size: 70px;
+  line-height: 1.1em;
+  padding: 0px 10px;
+}
+.text-white{color: #FFF;}
+.text-grey{color: #666;}
+.text-greylight{color: #CCC;}
+
+/** DISPLAY **/
+#display{
+  position: absolute;
+  left: 0; top: 40px;
+}
+
+/** NAV RIGHT BLOCK **/
+#right-block{
+  z-index: 3;
+  position: fixed;
+  top: 35px; right: 24px; bottom: 78px;
+
+  #right-block-index{
+    position: fixed;
+    top: 35px;
+    right: 24px; bottom: 78px;
+    width: 360px;
+    padding-left: 91px;
+    background-color: #666;
+    .block-cell-index{
+      height: 108px;
+      width: 269px;
+      font-size: 20px;
+      text-transform: uppercase;
+      overflow: hidden;
+      &.active{
+        .text{
+          color: #FFF;
+        }
+        .divider{
+          background-color: rgba(255, 255, 255, 0.8);
+        }
+      }
+      .text{
+        margin: 7px 8px;
+        width: 70%;
+        line-height: 1.1em;
+        color: #CCC;
+      }
+      .divider{
+        margin-top: 4px;
+        margin-left: 4px;
+        margin-right: 4px;
+        height: 4px;
+        background-color: rgba(234, 234, 234, 0.5);
+        border-radius: 2px;
+        width: 260px;
+      }
+    }
+  }
+
+  #right-block-left{
+    position: fixed;
+    right: 293px; bottom: 78px;
+    display: flex;
+    flex-direction: column-reverse;
+    .block-cell-left{
+      &.active{
+        width: 91px;
+        .text { color: #FFF; }
+      }
+      height: 74px;
+      background-color: #CCC;
+      width: 87px;
+      margin-top: 4px;
+      .text{
+        margin: 7px;
+        color: #666;
+        font-size: 46px;
+        line-height: 1em;
+      }
+    }
+  }
+  #right-block-right{
+    position: fixed;
+    right: 24px; top: 35px; bottom: 78px;
+    overflow: auto;
+    display: flex;
+    justify-content: space-between;
+     flex-direction: column;
+    .block-cell{
+      flex: 1;
+      width: 269px;
+      font-size: 20px;
+      text-transform: uppercase;
+      overflow: hidden;
+      &.active{
+        .text{
+          color: #FFF;
+        }
+        .divider{
+          background-color: rgba(255, 255, 255, 0.8);
+        }
+      }
+      .text{
+        margin: 7px 8px;
+        width: 70%;
+        line-height: 1.1em;
+      }
+      .divider{
+        margin-top: 4px;
+        margin-left: 4px;
+        margin-right: 4px;
+        height: 4px;
+        background-color: rgba(234, 234, 234, 0.5);
+        border-radius: 2px;
+        width: 260px;
+      }
+    }
+  }
+  #right-block-right::-webkit-scrollbar{
+    display: none;
+  }
+}
+
+/** NAV BUTTON **/
+#nav-bottom{
+  position: fixed;
+  right: 24px;
+  bottom: 0;
+  z-index: 4;
+  display: flex;
+  align-items: flex-end;
+
+  %block-button {
+    padding-left: 10px;
+    width: 87px;
+    height: 74px;
+    margin-left: 4px;
+    font-size: 55px;
+    line-height: 1em;
+    text-transform: uppercase;
+  }
+  .active{
+    height: 78px;
+  }
+  .block-button{
+    @extend %block-button;
+    color: #FFF;
+  }
+  .index-button{
+    @extend %block-button;
+    padding-left: 4px;
+    line-height: 1.4em;
+    font-size: 30px;
+    color: #CCC;
+    background-color: #666;
+  }
+}
+
+/** HEADINGS **/
+@mixin heading() {
+  z-index: 3;
+  overflow: hidden;
+  position: fixed;
+  text-transform: uppercase;
+}
+#sub-heading{
+  @include heading();
+  font-size: 26px;
+  height: 26px;
+  top: 46px;
+  left: 280px;
+}
+#block-heading{
+  @include heading();
+  height: 75px;
+  top: 35px;
+  left: 25px;
+}
+#block-heading-index{
+  @include heading();
+  height: 75px;
+  top: 20px;
+  left: 12px;
+}
+
+/** Index Displaying **/
+#index-display{
+  display: flex;
+  flex-direction: row;
+  position: absolute;
+  bottom: 0px;
+  left: 5px;
+
+  .block{
+    display: flex;
+    flex-direction: column-reverse;
+    width: 353px;
+    margin: 5px;
+    .label{
+      height: 74px;
+      width: 353px;
+      font-size: 55px;
+      padding-top: 25px;
+      padding-left: 10px;
+      color: white;
+    }
+    .level{
+      height: 130px;
+      width: 353px;
+      display: flex;
+      justify-content: space-between;
+      margin-top: 5px;
+    }
+    .level-name{
+      font-size: 40px;
+      padding-top: 20px;
+      padding-left: 10px;
+    }
+    .roof{
+      height: 60px;
+      display: flex;
+      justify-content: space-between;
+    }
+    .roof-name{
+      padding-top: 8px;
+      padding-left: 8px;
+      font-size: 25px;
+      line-height: 20px;
+    }
+    .comment{
+      padding-top: 8px;
+      color: #a3a3a3;
+      font-size: 18px;
+      width: 100px;
+    }
+    .index-zones{
+      padding-top: 12px;
+      padding-right: 12px;
+    }
+    .index-zone{
+      height: 25px;
+      width: 244px;
+      padding-left: 10px; 
+      font-size: 23px;
+      padding-top: 3px;
+      font-weight: lighter;
+      color: white;
+      margin: 1px;
+      &.facility{
+        color: black;
+      }
+    }
+  }
+}
+
+/** Meeting Room **/
+#meeting-room{
+  position: absolute;
+  bottom: 30px;
+  left: 5px;
+  height: 900px;
+  min-width: 1500px;
+  overflow: auto;
+  .lists{
+    display: flex;
+    flex-direction: row;
+    top: 0px;
+    position: absolute;
+    .list-row-btn-group{
+      display: flex;
+      align-items: flex-end;
+      .list-column{
+        height: 20px;
+        font-size: 16px;
+        text-align: center;
+        color: #000;
+      }
+      .list-column01{
+        width: 42px;
+      }
+      .list-column02{
+        width: 40px;
+      }
+      .list-column03{
+        width: 34px;
+      }
+    }
+  }
+  .list{
+    margin: 2px;
+  }
+  .list-row{
+    height: 33px;
+    width: 350px;
+    border-bottom: solid 1px black;
+    text-align: left;
+    display: flex;
+    justify-content: space-between;
+    font-size: 17px;
+    padding-top: 5px;
+    .list-row-btn-group{
+      display: flex;
+      align-items: flex-end;
+      .list-column{
+        height: 30px;
+        padding-top: 5px;
+        text-align: center;
+        color: #FFF;
+      }
+      .list-column01{
+        width: 42px;
+      }
+      .list-column02{
+        width: 40px;
+      }
+      .list-column03{
+        width: 34px;
+        color: #000;
+      }
+    }
+  }
+}
+#meeting-room::-webkit-scrollbar{
+    display: none;
+  }
