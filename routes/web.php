@@ -61,16 +61,21 @@ Route::group(['prefix' => 'shop-office', 'namespace' => 'ShopOffice'
 
     Route::group(['prefix' => 'ola-lab', 'namespace' => 'OlaLab'], function(){
 
-        Route::group(['prefix' => 'template'], function(){
-            Route::get('/list', 'TemplateController@getList');
-            Route::get('/create', 'TemplateController@getCreate');
-            Route::get('/edit/{id}', 'TemplateController@getEdit');
+        Route::group(['prefix' => 'screen-saver'], function(){
+            Route::get('/edit', 'ScreenSaverController@getEdit');
+            Route::post('/edit', 'ScreenSaverController@postEdit');
+        });
+
+        Route::group(['prefix' => 'product-template'], function(){
+            Route::get('/list', 'ProductTemplateController@getList');
+            Route::get('/create', 'ProductTemplateController@getCreate');
+            Route::get('/edit/{id}', 'ProductTemplateController@getEdit');
         });
 
         Route::group(['prefix' => 'product'], function(){
             Route::get('/list', 'ProductController@getList');
             Route::get('/create', 'ProductController@getCreate');
-            Route::get('/edit', 'ProductController@getEdit');
+            Route::get('/edit/{id}', 'ProductController@getEdit');
         });
 
         Route::group(['prefix' => 'publish'], function(){

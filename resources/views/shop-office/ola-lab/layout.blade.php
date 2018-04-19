@@ -6,9 +6,9 @@
 </head>
 <body>
   <div class="ui bg-red no-corner mb-0 pl-5 inverted menu">
-    <h1 class="pt-3"><a href="/shop-office/smart-screen/screen-saver/edit" class="text-white">CapitaLand Shop Office : G2000</a></h1>
+    <h1 class="pt-3"><a href="/shop-office/ola-lab/screen-saver/edit" class="text-white">CapitaLand Shop Office : G2000</a></h1>
     <div class="ui simple dropdown item" style="margin-left: 20px;">
-      Smart Screen Module
+      Ola-Lab Module
       <i class="dropdown icon"></i>
       <div class="menu">
         <a href="/shop-office/smart-screen/screen-saver/edit" class="item">Smart Screen Module</a>
@@ -37,10 +37,10 @@
   </div>
   <div class="ui inverted no-corner mt-0 menu">
     <div class="ui text container">
-      <a href="/shop-office/smart-screen/screen-saver/edit" class="{{Request::is('shop-office/smart-screen/screen-saver*')?'active':''}} item">Screensaver</a>
-      <a href="/shop-office/smart-screen/photo/list" class="{{Request::is('shop-office/smart-screen/photo*')?'active':''}} item">Photos</a>
-      <a href="/shop-office/smart-screen/product/list" class="{{Request::is('shop-office/smart-screen/product*')?'active':''}} item">Products</a>
-      <a href="/shop-office/smart-screen/category/list" class="{{Request::is('shop-office/smart-screen/category*')?'active':''}} item">Categories</a>
+      <a href="/shop-office/ola-lab/screen-saver/edit" class="{{Request::is('shop-office/ola-lab/screen-saver*')?'active':''}} item">Screensaver</a>
+      <a href="/shop-office/ola-lab/product-template/list" class="{{Request::is('shop-office/ola-lab/product-template*')?'active':''}} item">Product Template</a>
+      <a href="/shop-office/ola-lab/product/list" class="{{Request::is('shop-office/ola-lab/product/*')?'active':''}} item">Products</a>
+      {{-- <a href="/shop-office/ola-lab/category/list" class="{{Request::is('shop-office/ola-lab/category*')?'active':''}} item">Categories</a> --}}
     </div>
   </div>
   <div id="content-body">
